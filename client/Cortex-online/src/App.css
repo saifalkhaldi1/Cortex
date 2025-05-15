@@ -1,0 +1,63 @@
+/* src/App.css */
+
+.app-container {
+  width: 100%;
+  max-width: 700px; /* Slightly narrower */
+  background-color: var(--card-background-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
+
+/* Dark mode container */
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .app-container {
+    background-color: var(--card-background-dark);
+  }
+}
+body[data-theme="dark"] .app-container {
+  background-color: var(--card-background-dark);
+}
+
+.app-container h1 {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  font-weight: 1000;
+  font-size: 5rem;
+}
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) .app-container h1 {
+    color: var(--text-dark);
+  }
+}
+body[data-theme="dark"] .app-container h1 {
+  color: var(--text-dark);
+}
+
+/* FOOTER: black text for time & country */
+footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.85em;
+  color: #000;        /* ← black text */
+  text-align: center;
+  opacity: 0.8;
+}
+/* Keep black text in dark-mode too */
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) footer {
+    border-top-color: #333;
+    color: #000;        /* ← still black */
+  }
+}
+body[data-theme="dark"] footer {
+  border-top-color: #333;
+  color: #000;          /* ← still black */
+}
